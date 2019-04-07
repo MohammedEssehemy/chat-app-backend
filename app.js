@@ -11,6 +11,16 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
+// app.use((req, res, next) => {
+//     res.set({
+//         'Access-Control-Allow-Origin': '*',
+//         'Access-Control-Allow-Methods': 'post',
+//         'Access-Control-Allow-Headers': 'content-type'
+//     })
+//     if (req.method !== 'OPTIONS') return next();
+//     res.send();
+// });
+
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
