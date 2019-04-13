@@ -10,7 +10,7 @@ const verifyToken = util.promisify(jwt.verify);
 
 const secretKey = process.env.JWT_SECRET || 'ejgrhjgerhjgergh';
 
-const saltRounds = process.env.SALT_ROUNDS || 7;
+const saltRounds = Number(process.env.SALT_ROUNDS) || 7;
 
 const schema = new mongoose.Schema({
     username: {
